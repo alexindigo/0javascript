@@ -1,0 +1,177 @@
+/* kind of reset thing */
+html
+{
+    height: 100%;
+}
+body
+{
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section
+{
+    display: block;
+}
+*
+{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+    vertical-align: top;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+/* frame */
+body
+{
+    background-color: #eeeeee;
+    background-image: url("bright_squares.png");
+    background-position: 0px 0px;
+    background-repeat: repeat;
+    font-family: "Terminal Dosis Light", cursive;
+    font-size: 16px;
+    color: #444444;
+    text-shadow: 1px 1px 1px #ffffff;
+}
+header>h1
+{
+    padding: 15px 5%;
+    font-size: 64px;
+    text-shadow: 1px 1px 2px #ffffff;
+}
+header>h1>span
+{
+    color: #666666;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+    header>h1>span:hover
+    {
+        color: #444444;
+    }
+    header>h1>span.sep:hover
+    {
+        color: #666666;
+    }
+/* footer */
+footer
+{
+    position: absolute;
+    display: table;
+    left: 0px;
+    bottom: 0px;
+    height: 80px;
+    width: 100%;
+    padding: 0px 5%;
+    color: #a5a5a5;
+    font-size: 12px;
+    border-top: 1px solid #000000;
+    background-color: #444444;
+    text-shadow: none;
+    z-index: 2;
+    background-image: url("denim.png");
+    background-position: top left;
+    background-repeat: repeat;
+    text-shadow: 0px -1px 1px #222222;
+}
+footer a
+{
+    color: #a5a5a5;
+    text-decoration: none;
+}
+    body>footer a:hover
+    {
+        text-decoration: underline;
+    }
+footer p
+{
+    text-indent: 0px;
+    display: table-cell;
+    vertical-align: middle;
+}
+#copyright
+{
+    width: 30%;
+    background-position: 5px center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+#project_links
+{
+    width: 30%;
+    text-align: right;
+}
+#browsers
+{
+    width: 40%;
+    font-size: 13px;
+    color: #ffffff;
+    text-align: center;
+}
+/* elements */
+section.example
+{
+    position: relative;
+    margin: 20px auto;
+    padding: 30px 0px 100px;
+    width: 90%;
+    text-align: center;
+
+    -webkit-animation-name: developing;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-name: developing;
+    -moz-animation-duration: 1.5s;
+}
+ul>li
+{
+    list-style: none;
+}
+/* keyframes */
+@-webkit-keyframes developing
+{
+    0%
+    {
+        opacity: 0;
+    }
+    80%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+@-moz-keyframes developing
+{
+    0%
+    {
+        opacity: 0;
+    }
+    80%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+/*
+ * Here goes firefox only stuff
+ */
+@-moz-document url-prefix()
+{
+/* add your ff-only stuff below */
+    footer
+    {
+        width: 90%;
+    }
+/* add your ff-only stuff above */
+}

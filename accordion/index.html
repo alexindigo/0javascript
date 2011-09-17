@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=1024">
+ <title>0javascript &middot; accordion</title>
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Terminal+Dosis+Light">
+ <link rel="stylesheet" type="text/css" href="base.css">
+ <link rel="stylesheet" type="text/css" href="accordion.css">
+</head>
+<body>
+
+<header>
+<h1><span class="title">0javascript</span><span class="sep">/</span><span class="resource">accordion</span></h1>
+</header>
+<!-- header ends here -->
+
+<section class="example">
+
+<!-- multi views accordion goes below -->
+<div class="accordion multi">
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_multi_1" class="toggle" type="checkbox" checked="checked" name="toggle_multi" value="">
+  <div class="header"><label for="accordion_multi_1">Header One</label><span class="arrow"></span></div>
+  <div class="content">
+   <ul>
+    <li>Element One</li>
+    <li>Element Two</li>
+    <li>Element Three</li>
+    <li>Element Four</li>
+    <li>Element Five</li>
+   </ul>
+  </div>
+ </div>
+ <!-- view ends here -->
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_multi_2" class="toggle" type="checkbox" name="toggle_multi" value="">
+  <div class="header"><label for="accordion_multi_2">Header Two</label><span class="arrow"></span></div>
+  <div class="content">
+   <p>
+    ac&bull;cor&bull;di&bull;on |ə'kôrdēən|<br>
+    noun<br>
+    a portable musical instrument with metal reeds blown by bellows, played by means of keys and buttons: accordion [ as modifier ] : <i>an accordion player</i>.
+    &bull; [ as modifier ] folding like the bellows of an accordion: <i>an accordion pleat</i>.
+    ORIGIN mid 19th cent.: from German <i>Akkordion</i>, from Italian <i>accordare 'to tune'</i>.
+   </p>
+  </div>
+ </div>
+ <!-- view ends here -->
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_multi_3" class="toggle" type="checkbox" name="toggle_multi" value="">
+  <div class="header"><label for="accordion_multi_3">Header Three</label><span class="arrow"></span></div>
+  <div class="content picture">
+   <img class="sample" src="http://farm6.static.flickr.com/5156/5858978693_d5701a01b3_m.jpg" alt="Sample image">
+  </div>
+ </div>
+ <!-- view ends here -->
+</div>
+<!-- multi views accordion goes above -->
+
+<!-- single view accordion goes below -->
+<div class="accordion single">
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_single_1" class="toggle" type="radio" checked="checked" name="toggle_single" value="">
+  <div class="header"><label for="accordion_single_1">Header One</label><span class="arrow"></span></div>
+  <div class="content">
+   <ul>
+    <li>Element One</li>
+    <li>Element Two</li>
+    <li>Element Three</li>
+    <li>Element Four</li>
+    <li>Element Five</li>
+   </ul>
+  </div>
+ </div>
+ <!-- view ends here -->
+
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_single_2" class="toggle" type="radio" name="toggle_single" value="">
+  <div class="header"><label for="accordion_single_2">Header Two</label><span class="arrow"></span></div>
+  <div class="content">
+   <p>
+    Terminal Dosis Light is a really really light, almost hairline, sans-serif rounded font. In fact, it's so light she only wants to be used at 36pt or up. She also includes many alternative characters, all designed by Edgar Tolentino and Pablo Impallari.
+   </p>
+  </div>
+ </div>
+ <!-- view ends here -->
+
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_single_3" class="toggle" type="radio" name="toggle_single" value="">
+  <div class="header"><label for="accordion_single_3">Header Three</label><span class="arrow"></span></div>
+  <div class="content picture">
+   <img class="sample" src="http://farm4.static.flickr.com/3045/5834318193_91182f966c_m.jpg" alt="Sample image">
+  </div>
+ </div>
+ <!-- view ends here -->
+</div>
+<!-- single view accordion goes above -->
+
+<!-- animated view accordion goes below -->
+<div class="accordion animated">
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_animated_1" class="toggle" type="radio" checked="checked" name="toggle_animated" value="">
+  <div class="header"><label for="accordion_animated_1">Header One</label><span class="arrow"></span></div>
+  <div class="content animated100">
+   <ul>
+    <li>Element One</li>
+    <li>Element Two</li>
+    <li>Element Three</li>
+    <li>Element Four</li>
+    <li>Element Five</li>
+   </ul>
+  </div>
+ </div>
+ <!-- view ends here -->
+
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_animated_2" class="toggle" type="radio" name="toggle_animated" value="">
+  <div class="header"><label for="accordion_animated_2">Header Two</label><span class="arrow"></span></div>
+  <div class="content animated120">
+   <p>
+    Terminal Dosis Light is a really really light, almost hairline, sans-serif rounded font. In fact, it's so light she only wants to be used at 36pt or up. She also includes many alternative characters, all designed by Edgar Tolentino and Pablo Impallari.
+   </p>
+  </div>
+ </div>
+ <!-- view ends here -->
+
+ <!-- view starts here -->
+ <div class="view">
+  <input id="accordion_animated_3" class="toggle" type="radio" name="toggle_animated" value="">
+  <div class="header"><label for="accordion_animated_3">Header Three</label><span class="arrow"></span></div>
+  <div class="content picture animated240">
+   <img class="sample" src="http://farm7.static.flickr.com/6066/6051713407_9680458c52_m.jpg" alt="Sample image">
+  </div>
+ </div>
+ <!-- view ends here -->
+</div>
+<!-- single view accordion goes above -->
+</section>
+
+<!-- footer begins here -->
+<footer>
+    <p id="copyright">&copy; 2011 Alex Indigo<br>Released under the MIT license.</p>
+    <p id="browsers">Safari, Chrome, Firefox, Internet Explorer 9</p>
+    <p id="project_links">
+     <a href="#documentation">Documentation</a> &middot; <a href="#version">Version 0.1</a><br>
+     <a href="#report_bug">Report Bug</a> &middot; <a href="#feedback">Send Feedback</a>
+    </p>
+</footer>
+
+</body>
+</html>

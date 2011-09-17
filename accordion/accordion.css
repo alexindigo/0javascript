@@ -1,0 +1,473 @@
+/* layout&functionality */
+.accordion>.view>input.toggle,
+.accordion>.view>input.toggle:not(:checked)~.content
+{
+    display: none;
+}
+    .accordion>.view>input.toggle:checked~.content
+    {
+        display: block;
+    }
+.accordion>.view>input.toggle~.header>label
+{
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+/* look&feel */
+.accordion
+{
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    margin-left: 60px;
+    text-align: justify;
+
+    background-color: #f0f0f0;
+    background-image: -webkit-gradient(linear,left bottom,left top, color-stop(0, rgb(217,217,217)), color-stop(0.5, rgb(240,240,240)));
+    background-image: -moz-linear-gradient(center bottom, rgb(217,217,217) 0%, rgb(240,240,240) 50%);
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: inset 0px 1px 0px #ffffff;
+    -moz-box-shadow: inset 0px 1px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px #ffffff;
+}
+    .accordion:first-child
+    {
+        margin-left: 0px;
+    }
+.accordion:before
+{
+    content: "";
+
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    border: 1px solid rgba(0,0,0,0.1);
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.accordion>.view>.header
+{
+    position: relative;
+    padding: 5px 10px;
+    text-shadow: 0px 1px 1px #ffffff;
+
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#c4c4c4));
+    background-image: -moz-linear-gradient(top, #ededed, #c4c4c4);
+    border: 1px solid #acacac;
+    border-top-color: #bdbdbd;
+    border-bottom-color: #949494;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+    .accordion>.view>input.toggle:checked~.header
+    {
+        color: #3d79d0;
+    }
+    .accordion>.view>.header:hover,
+    .accordion>.view>.header:focus
+    {
+        color: #3d79d0;
+        text-shadow:  0px 1px 1px #ffffff, 0px 0px 1px #3d79d0;
+    }
+    .accordion>.view>.header:active
+    {
+        background-color: #ccc;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#c3c3c3), to(#ebebeb));
+        background-image: -moz-linear-gradient(top, #c3c3c3, #ebebeb);
+        border-color: #a6a6a6;
+        border-top-color: #939393;
+        border-bottom-color: #bcbcbc;
+    }
+.accordion>.view>.header>label
+{
+    display: block;
+    width: 100%;
+}
+.accordion>.view>.header>.arrow
+{
+    position: absolute;
+    display: block;
+    top: 11px;
+    right: 8px;
+    width: 0px;
+    height: 0px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent #999999;
+
+    -webkit-transition: border-color 0.2s ease-in-out;
+    -moz-transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;
+}
+    .accordion>.view>input.toggle:checked~.header>.arrow
+    {
+        top: 13px;
+        right: 10px;
+        border-color: #666666 transparent transparent transparent;
+    }
+    .accordion>.view>.header:hover>.arrow,
+    .accordion>.view>.header:focus>.arrow
+    {
+        border-color: transparent transparent transparent #3d79d0;
+    }
+        .accordion>.view>input.toggle:checked~.header:hover>.arrow,
+        .accordion>.view>input.toggle:checked~.header:hover>.arrow
+        {
+            border-color: #3d79d0 transparent transparent transparent;
+        }
+.accordion>.view>.content
+{
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+/* massage content */
+.accordion:after
+{
+    content: "";
+
+    position: absolute;
+    top: -30px;
+    right: 0px;
+    left: 10px;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    z-index: -1;
+}
+    .accordion.multi:after
+    {
+        content: "Multi select accordion";
+    }
+    .accordion.single:after
+    {
+        content: "Single select accordion";
+    }
+    .accordion.animated:after
+    {
+        content: "Animated select accordion (fixed height)";
+    }
+ul>li:hover
+{
+    color: #3d79d0;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.accordion>.view>.content.picture
+{
+    text-align: center;
+}
+.accordion img.sample
+{
+    width: 240px;
+    height: 240px;
+    border: 1px solid #c0c0c0;
+    -webkit-box-shadow: 0px 0px 1px #ffffff;
+    -moz-box-shadow: 0px 0px 1px #ffffff;
+    box-shadow: 0px 0px 1px #ffffff;
+}
+/*
+ * Here goes firefox only stuff
+ */
+@-moz-document url-prefix()
+{
+/* add your ff-only stuff below */
+.accordion>.view>.header>.arrow
+{
+    top: 12px;
+}
+    .accordion>.view>input.toggle:checked~.header>.arrow
+    {
+        top: 14px;
+    }
+/* add your ff-only stuff above */
+}
+/* more nice to have hacks */
+@media all and (orientation:landscape)
+{
+    /* consider it as default */
+}
+@media all and (orientation: portrait)
+{
+    .accordion
+    {
+        display: block;
+        margin: 60px auto 30px;
+    }
+        .accordion:first-child
+        {
+            margin: auto auto 30px;
+        }
+}
+@media all and (max-width: 1024px)
+{
+    .accordion
+    {
+        display: block;
+        margin: 60px auto 30px;
+    }
+        .accordion:first-child
+        {
+            margin: auto auto 30px;
+        }
+}
+/* couldn't come up with less hacky way, leave like that for now */
+/* animation */
+.accordion.animated>.view>input.toggle:not(:checked)~.content
+{
+    display: block;
+    visibility: hidden;
+    height: 0px;
+    margin-bottom: 0px;
+    padding: 0px 10px;
+}
+    .accordion.animated>.view>input.toggle:checked~.content
+    {
+        display: block;
+        visibility: visible;
+        height: auto;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+    }
+/* 100px */
+.accordion.animated>.view>input.toggle:not(:checked)~.content.animated100
+{
+    overflow: hidden;
+    -webkit-animation-name: disappearing100;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: disappearing100;
+    -moz-animation-duration: 1s;
+}
+.accordion.animated>.view>input.toggle:checked~.content.animated100
+{
+    overflow: hidden;
+    -webkit-animation-name: appearing100;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: appearing100;
+    -moz-animation-duration: 1s;
+}
+/* 120px */
+.accordion.animated>.view>input.toggle:not(:checked)~.content.animated120
+{
+    overflow: hidden;
+    -webkit-animation-name: disappearing120;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: disappearing120;
+    -moz-animation-duration: 1s;
+}
+.accordion.animated>.view>input.toggle:checked~.content.animated120
+{
+    overflow: hidden;
+    -webkit-animation-name: appearing120;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: appearing120;
+    -moz-animation-duration: 1s;
+}
+/* 240px */
+.accordion.animated>.view>input.toggle:not(:checked)~.content.animated240
+{
+    overflow: hidden;
+    -webkit-animation-name: disappearing240;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: disappearing240;
+    -moz-animation-duration: 1s;
+}
+.accordion.animated>.view>input.toggle:checked~.content.animated240
+{
+    overflow: hidden;
+    -webkit-animation-name: appearing240;
+    -webkit-animation-duration: 1s;
+    -moz-animation-name: appearing240;
+    -moz-animation-duration: 1s;
+}
+/* keyframes */
+/* since height: auto doesn't produce good animation, hardcode for now */
+/* height 100px */
+@-webkit-keyframes disappearing100
+{
+    0%
+    {
+        visibility: visible;
+        height: 100px;
+        padding: 5px 10px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 0px;
+        padding: 0px 10px;
+    }
+}
+@-moz-keyframes disappearing100
+{
+    0%
+    {
+        visibility: visible;
+        height: 100px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+}
+@-webkit-keyframes appearing100
+{
+    0%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 100px;
+    }
+}
+@-moz-keyframes appearing100
+{
+    0%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 100px;
+    }
+}
+/* height 120px */
+@-webkit-keyframes disappearing120
+{
+    0%
+    {
+        visibility: visible;
+        height: 120px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+}
+@-moz-keyframes disappearing120
+{
+    0%
+    {
+        visibility: visible;
+        height: 120px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+}
+@-webkit-keyframes appearing120
+{
+    0%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 120px;
+    }
+}
+@-moz-keyframes appearing120
+{
+    0%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 120px;
+    }
+}
+/* height 240px */
+@-webkit-keyframes disappearing240
+{
+    0%
+    {
+        visibility: visible;
+        height: 240px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+}
+@-moz-keyframes disappearing240
+{
+    0%
+    {
+        visibility: visible;
+        height: 240px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+}
+@-webkit-keyframes appearing240
+{
+    0%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 240px;
+    }
+}
+@-moz-keyframes appearing240
+{
+    0%
+    {
+        visibility: visible;
+        height: 0px;
+    }
+    100%
+    {
+        visibility: visible;
+        height: 240px;
+    }
+}
