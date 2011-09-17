@@ -171,7 +171,7 @@
     }
     .accordion.animated:after
     {
-        content: "Animated select accordion (fixed height)";
+        content: "Animated accordion (fixed height)";
     }
 ul>li:hover
 {
@@ -189,10 +189,10 @@ ul>li:hover
 {
     width: 240px;
     height: 240px;
-    border: 1px solid #c0c0c0;
-    -webkit-box-shadow: 0px 0px 1px #ffffff;
-    -moz-box-shadow: 0px 0px 1px #ffffff;
-    box-shadow: 0px 0px 1px #ffffff;
+    border: 1px solid #999999;
+    -webkit-box-shadow: 1px 1px 1px #ffffff;
+    -moz-box-shadow: 1px 1px 1px #ffffff;
+    box-shadow: 1px 1px 1px #ffffff;
 }
 /*
  * Here goes firefox only stuff
@@ -200,14 +200,14 @@ ul>li:hover
 @-moz-document url-prefix()
 {
 /* add your ff-only stuff below */
-.accordion>.view>.header>.arrow
-{
-    top: 12px;
-}
-    .accordion>.view>input.toggle:checked~.header>.arrow
+    .accordion>.view>.header>.arrow
     {
-        top: 14px;
+        top: 12px;
     }
+        .accordion>.view>input.toggle:checked~.header>.arrow
+        {
+            top: 14px;
+        }
 /* add your ff-only stuff above */
 }
 /* more nice to have hacks */

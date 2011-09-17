@@ -1,0 +1,13 @@
+footer
+{
+    width: 90%;
+}
+/* accordion */
+.accordion>.view>.header>.arrow
+{
+    top: 10px;
+}
+    .accordion>.view>input.toggle:checked~.header>.arrow
+    {
+        top: 12px;
+    }

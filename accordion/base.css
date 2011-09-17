@@ -44,7 +44,7 @@ header>h1
 }
 header>h1>span
 {
-    color: #666666;
+    color: #808080;
 
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -102,7 +102,7 @@ footer p
     background-repeat: no-repeat;
     text-align: left;
 }
-#project_links
+#links
 {
     width: 30%;
     text-align: right;
@@ -132,7 +132,107 @@ ul>li
 {
     list-style: none;
 }
+/* extra stuff */
+#loading
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    margin-left: -24px;
+    margin-top: -24px;
+    background-image: url("loading.png");
+
+    -webkit-animation-name: rotating;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotating;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+}
+#github
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+#github>a
+{
+    position: absolute;
+    display: block;
+    top: 55px;
+    right: -55px;
+    width: 240px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #444444;
+    background-image: url("denim.png");
+    background-position: top left;
+    background-repeat: repeat;
+    border-top: 1px dashed #eeeeee;
+    border-bottom: 1px dashed #eeeeee;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0px 0px 1px #cccccc;
+    text-decoration: none;
+
+    -webkit-box-shadow: 0px 1px 1px #444444, 0px -1px 1px #444444;
+    -moz-box-shadow: 0px 1px 1px #444444, 0px -1px 1px #444444;
+    box-shadow: 0px 1px 1px #444444, 0px -1px 1px #444444;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+}
 /* keyframes */
+@-webkit-keyframes rotating
+{
+    0%
+    {
+        top: 50%;
+        left: 50%;
+        width: 48px;
+        height: 48px;
+        opacity: 1;
+        -webkit-transform: rotate(0deg);
+    }
+    100%
+    {
+        top: 50%;
+        left: 50%;
+        width: 48px;
+        height: 48px;
+        opacity: 0;
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotating
+{
+    0%
+    {
+        top: 50%;
+        left: 50%;
+        width: 48px;
+        height: 48px;
+        opacity: 1;
+        -moz-transform: rotate(0deg);
+    }
+    100%
+    {
+        top: 50%;
+        left: 50%;
+        width: 48px;
+        height: 48px;
+        opacity: 0;
+        -moz-transform: rotate(360deg);
+    }
+}
 @-webkit-keyframes developing
 {
     0%
