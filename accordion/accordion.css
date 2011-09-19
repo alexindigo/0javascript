@@ -1,14 +1,24 @@
 /* layout&functionality */
-.accordion>.view>input.toggle,
-.accordion>.view>input.toggle:not(:checked)~.content
+.accordion>.view>input.toggle
+{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 32px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+.accordion>.view>input.toggle:not(:checked)+.for_ios>.content
 {
     display: none;
 }
-    .accordion>.view>input.toggle:checked~.content
+    /* special treat for ios */
+    .accordion>.view>input.toggle:checked+.for_ios>.content
     {
         display: block;
     }
-.accordion>.view>input.toggle~.header>label
+.accordion>.view>input.toggle+.for_ios>.header>label
 {
     cursor: pointer;
     -webkit-user-select: none;
@@ -60,7 +70,7 @@
     -moz-background-clip: padding-box;
     background-clip: padding-box;
 }
-.accordion>.view>.header
+.accordion>.view>.for_ios>.header
 {
     position: relative;
     padding: 5px 10px;
@@ -86,17 +96,18 @@
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-    .accordion>.view>input.toggle:checked~.header
+    .accordion>.view>input.toggle:checked+.for_ios>.header
     {
         color: #3d79d0;
     }
-    .accordion>.view>.header:hover,
-    .accordion>.view>.header:focus
+    .accordion>.view>input.toggle:hover+.for_ios>.header,
+    .accordion>.view>.for_ios>.header:hover
     {
         color: #3d79d0;
         text-shadow:  0px 1px 1px #ffffff, 0px 0px 1px #3d79d0;
     }
-    .accordion>.view>.header:active
+    .accordion>.view>input.toggle:active+.for_ios>.header,
+    .accordion>.view>.for_ios>.header:active
     {
         background-color: #ccc;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#c3c3c3), to(#ebebeb));
@@ -105,12 +116,12 @@
         border-top-color: #939393;
         border-bottom-color: #bcbcbc;
     }
-.accordion>.view>.header>label
+.accordion>.view>.for_ios>.header>label
 {
     display: block;
     width: 100%;
 }
-.accordion>.view>.header>.arrow
+.accordion>.view>.for_ios>.header>.arrow
 {
     position: absolute;
     display: block;
@@ -126,23 +137,23 @@
     -moz-transition: border-color 0.2s ease-in-out;
     transition: border-color 0.2s ease-in-out;
 }
-    .accordion>.view>input.toggle:checked~.header>.arrow
+    .accordion>.view>input.toggle:checked+.for_ios>.header>.arrow
     {
         top: 13px;
         right: 10px;
         border-color: #666666 transparent transparent transparent;
     }
-    .accordion>.view>.header:hover>.arrow,
-    .accordion>.view>.header:focus>.arrow
+    .accordion>.view>input.toggle:hover+.for_ios>.header>.arrow,
+    .accordion>.view>.for_ios>.header:hover>.arrow
     {
         border-color: transparent transparent transparent #3d79d0;
     }
-        .accordion>.view>input.toggle:checked~.header:hover>.arrow,
-        .accordion>.view>input.toggle:checked~.header:hover>.arrow
+        .accordion>.view>input.toggle:checked:hover+.for_ios>.header>.arrow,
+        .accordion>.view>input.toggle:checked+.for_ios>.header:hover>.arrow
         {
             border-color: #3d79d0 transparent transparent transparent;
         }
-.accordion>.view>.content
+.accordion>.view>.for_ios>.content
 {
     margin-bottom: 5px;
     padding: 5px 10px;
@@ -181,7 +192,7 @@ ul>li:hover
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.accordion>.view>.content.picture
+.accordion>.view>.for_ios>.content.picture
 {
     text-align: center;
 }
@@ -200,11 +211,11 @@ ul>li:hover
 @-moz-document url-prefix()
 {
 /* add your ff-only stuff below */
-    .accordion>.view>.header>.arrow
+    .accordion>.view>.for_ios>.header>.arrow
     {
         top: 12px;
     }
-        .accordion>.view>input.toggle:checked~.header>.arrow
+        .accordion>.view>input.toggle:checked+.for_ios>.header>.arrow
         {
             top: 14px;
         }
@@ -227,7 +238,7 @@ ul>li:hover
             margin: auto auto 30px;
         }
 }
-@media all and (max-width: 1024px)
+@media all and (max-width: 1020px)
 {
     .accordion
     {
@@ -241,7 +252,7 @@ ul>li:hover
 }
 /* couldn't come up with less hacky way, leave like that for now */
 /* animation */
-.accordion.animated>.view>input.toggle:not(:checked)~.content
+.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content
 {
     display: block;
     visibility: hidden;
@@ -249,7 +260,7 @@ ul>li:hover
     margin-bottom: 0px;
     padding: 0px 10px;
 }
-    .accordion.animated>.view>input.toggle:checked~.content
+    .accordion.animated>.view>input.toggle:checked+.for_ios>.content
     {
         display: block;
         visibility: visible;
@@ -258,7 +269,7 @@ ul>li:hover
         padding: 5px 10px;
     }
 /* 100px */
-.accordion.animated>.view>input.toggle:not(:checked)~.content.animated100
+.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content.animated100
 {
     overflow: hidden;
     -webkit-animation-name: disappearing100;
@@ -266,7 +277,7 @@ ul>li:hover
     -moz-animation-name: disappearing100;
     -moz-animation-duration: 1s;
 }
-.accordion.animated>.view>input.toggle:checked~.content.animated100
+.accordion.animated>.view>input.toggle:checked+.for_ios>.content.animated100
 {
     overflow: hidden;
     -webkit-animation-name: appearing100;
@@ -275,7 +286,7 @@ ul>li:hover
     -moz-animation-duration: 1s;
 }
 /* 120px */
-.accordion.animated>.view>input.toggle:not(:checked)~.content.animated120
+.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content.animated120
 {
     overflow: hidden;
     -webkit-animation-name: disappearing120;
@@ -283,7 +294,7 @@ ul>li:hover
     -moz-animation-name: disappearing120;
     -moz-animation-duration: 1s;
 }
-.accordion.animated>.view>input.toggle:checked~.content.animated120
+.accordion.animated>.view>input.toggle:checked+.for_ios>.content.animated120
 {
     overflow: hidden;
     -webkit-animation-name: appearing120;
@@ -292,7 +303,7 @@ ul>li:hover
     -moz-animation-duration: 1s;
 }
 /* 240px */
-.accordion.animated>.view>input.toggle:not(:checked)~.content.animated240
+.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content.animated240
 {
     overflow: hidden;
     -webkit-animation-name: disappearing240;
@@ -300,7 +311,7 @@ ul>li:hover
     -moz-animation-name: disappearing240;
     -moz-animation-duration: 1s;
 }
-.accordion.animated>.view>input.toggle:checked~.content.animated240
+.accordion.animated>.view>input.toggle:checked+.for_ios>.content.animated240
 {
     overflow: hidden;
     -webkit-animation-name: appearing240;
