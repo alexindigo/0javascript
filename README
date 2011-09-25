@@ -1,4 +1,7 @@
 Collection of CSS-only widgets:
 
 - Accordion for Safari, Chrome, Firefox, Internet Explorer 9, iPhone, iPad
-- Lightbox for Safari
+- Lightbox for Safari, Chrome, Firefox, Internet Explorer 9, iPhone*, iPad*
+
+--
+* Limited support
