@@ -1,0 +1,239 @@
+/* webkit css bugfix: http://css-tricks.com/8439-webkit-sibling-bug/ */
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+/* end of bugfix */
+
+/* layout&functionality */
+
+/* default catcher */
+#gallery
+{
+    display: none;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+}
+
+/* common elements */
+#chrome
+{
+    display: none;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0px;
+    z-index: 102;
+}
+
+/* big picture stuff */
+.picture
+{
+    display: none;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+}
+
+/* show big picture */
+.picture:target,
+.picture:target~#chrome
+{
+    display: block;
+}
+
+/* look&feel */
+
+.picture:target~*
+{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+#chrome
+{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.picture
+{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.picture>img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -320px;
+    margin-left: -320px;
+    width: 640px;
+    height: 640px;
+}
+.picture>a.next,
+.picture>a.prev
+{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 120px;
+    top: 50%;
+    right: 20px;
+    margin-top: -60px;
+    text-decoration: none;
+}
+.picture>a.prev
+{
+    right: auto;
+    left: 20px;
+}
+.picture>a.next:after,
+.picture>a.prev:after
+{
+    content: "\203A";
+
+    line-height: 120px;
+    font-size: 120px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0px 0px 5px #ffffff;
+}
+    .picture>a.next:hover:after,
+    .picture>a.prev:hover:after
+    {
+        color: #3d79d0;
+        text-shadow: 0px 0px 5px #3d79d0;
+    }
+.picture>a.prev:after
+{
+    content: "\2039";
+}
+#chrome>a.close
+{
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 10px;
+    padding: 2px 7px;
+    border: 1px solid #c0c0c0;
+    color: #cccccc;
+    text-decoration: none;
+    text-shadow: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+    #chrome>a.close:hover
+    {
+        color: #3d79d0;
+        border-color: #3d79d0;
+        text-shadow: 0px 0px 5px #3d79d0;
+        -webkit-box-shadow: 0px 0px 2px #3d79d0;
+        -moz-box-shadow: 0px 0px 2px #3d79d0;
+        box-shadow: 0px 0px 2px #3d79d0;
+    }
+.container
+{
+    margin: 20px 0px;
+}
+.container>.thumb
+{
+    display: inline-block;
+    margin: 0px 5px;
+}
+.container>.thumb>a
+{
+    display: inline-block;
+    padding: 2px;
+    background-color: #ffffff;
+    border: 1px solid #c0c0c0;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0px 0px 1px #c0c0c0;
+    -moz-box-shadow: 0px 0px 1px #c0c0c0;
+    box-shadow: 0px 0px 1px #c0c0c0;
+}
+    .container>.thumb>a:hover
+    {
+        border-color: #3d79d0;
+        -webkit-box-shadow: 0px 0px 2px #3d79d0;
+        -moz-box-shadow: 0px 0px 2px #3d79d0;
+        box-shadow: 0px 0px 2px #3d79d0;
+    }
+.container>.thumb img
+{
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+/* extra stuff: loop */
+#do_loop
+{
+    position: fixed;
+    display: block;
+    z-index: 103;
+    top: 11px;
+    left: 15px;
+    width: 36px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0;
+}
+#chrome>.loop
+{
+    position: absolute;
+    display: block;
+    top: 11px;
+    left: 15px;
+    width: 36px;
+    height: 24px;
+    background-image: url("/i/loop.png");
+    background-position: 0px 0px;
+    text-indent: -9999px;
+    overflow: hidden;
+    cursor: pointer;
+}
+    #do_loop:checked~#chrome>.loop
+    {
+        background-position: 0px -24px;
+    }
+    #do_loop:hover~#chrome>.loop,
+    #chrome>.loop:hover
+    {
+        background-position: 0px -48px;
+    }
+    #do_loop:checked:hover~#chrome>.loop,
+    #do_loop:checked~#chrome>.loop:hover
+    {
+        background-position: 0px -72px;
+    }
+.picture>a.loop
+{
+    display: none;
+}
+#do_loop:checked~.picture>a.loop
+{
+    display: block;
+}
+/* animation */
+

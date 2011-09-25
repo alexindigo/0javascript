@@ -1,3 +1,7 @@
+/* webkit css bugfix: http://css-tricks.com/8439-webkit-sibling-bug/ */
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+/* end of bugfix */
 /* layout&functionality */
 .accordion>.view>input.toggle
 {
@@ -9,16 +13,16 @@
     z-index: 1;
     cursor: pointer;
 }
-.accordion>.view>input.toggle:not(:checked)+.for_ios>.content
+.accordion>.view>input.toggle:not(:checked)~.content
 {
     display: none;
 }
     /* special treat for ios */
-    .accordion>.view>input.toggle:checked+.for_ios>.content
+    .accordion>.view>input.toggle:checked~.content
     {
         display: block;
     }
-.accordion>.view>input.toggle+.for_ios>.header>label
+.accordion>.view>input.toggle~.header>label
 {
     cursor: pointer;
     -webkit-user-select: none;
@@ -70,7 +74,7 @@
     -moz-background-clip: padding-box;
     background-clip: padding-box;
 }
-.accordion>.view>.for_ios>.header
+.accordion>.view>.header
 {
     position: relative;
     padding: 5px 10px;
@@ -88,26 +92,26 @@
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding-box;
     background-clip: padding-box;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
-    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5);
+    -moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5);
+    box-shadow: inset 0px 1px 0px rgba(255,255,255,0.5);
 
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-    .accordion>.view>input.toggle:checked+.for_ios>.header
+    .accordion>.view>input.toggle:checked~.header
     {
         color: #3d79d0;
     }
-    .accordion>.view>input.toggle:hover+.for_ios>.header,
-    .accordion>.view>.for_ios>.header:hover
+    .accordion>.view>input.toggle:hover~.header,
+    .accordion>.view>.header:hover
     {
         color: #3d79d0;
         text-shadow:  0px 1px 1px #ffffff, 0px 0px 1px #3d79d0;
     }
-    .accordion>.view>input.toggle:active+.for_ios>.header,
-    .accordion>.view>.for_ios>.header:active
+    .accordion>.view>input.toggle:active~.header,
+    .accordion>.view>.header:active
     {
         background-color: #ccc;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#c3c3c3), to(#ebebeb));
@@ -116,12 +120,12 @@
         border-top-color: #939393;
         border-bottom-color: #bcbcbc;
     }
-.accordion>.view>.for_ios>.header>label
+.accordion>.view>.header>label
 {
     display: block;
     width: 100%;
 }
-.accordion>.view>.for_ios>.header>.arrow
+.accordion>.view>.header>.arrow
 {
     position: absolute;
     display: block;
@@ -137,26 +141,31 @@
     -moz-transition: border-color 0.2s ease-in-out;
     transition: border-color 0.2s ease-in-out;
 }
-    .accordion>.view>input.toggle:checked+.for_ios>.header>.arrow
+    .accordion>.view>input.toggle:checked~.header>.arrow
     {
         top: 13px;
         right: 10px;
         border-color: #666666 transparent transparent transparent;
     }
-    .accordion>.view>input.toggle:hover+.for_ios>.header>.arrow,
-    .accordion>.view>.for_ios>.header:hover>.arrow
+    .accordion>.view>input.toggle:hover~.header>.arrow,
+    .accordion>.view>.header:hover>.arrow
     {
         border-color: transparent transparent transparent #3d79d0;
     }
-        .accordion>.view>input.toggle:checked:hover+.for_ios>.header>.arrow,
-        .accordion>.view>input.toggle:checked+.for_ios>.header:hover>.arrow
+        .accordion>.view>input.toggle:checked:hover~.header>.arrow,
+        .accordion>.view>input.toggle:checked~.header:hover>.arrow
         {
             border-color: #3d79d0 transparent transparent transparent;
         }
-.accordion>.view>.for_ios>.content
+.accordion>.view>.content
 {
     margin-bottom: 5px;
     padding: 5px 10px;
+}
+.accordion>.view>.content>p
+{
+    margin: 0px;
+    text-align: justify;
 }
 /* massage content */
 .accordion:after
@@ -192,7 +201,7 @@ ul>li:hover
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.accordion>.view>.for_ios>.content.picture
+.accordion>.view>.content.picture
 {
     text-align: center;
 }
@@ -211,11 +220,11 @@ ul>li:hover
 @-moz-document url-prefix()
 {
 /* add your ff-only stuff below */
-    .accordion>.view>.for_ios>.header>.arrow
+    .accordion>.view>.header>.arrow
     {
         top: 12px;
     }
-        .accordion>.view>input.toggle:checked+.for_ios>.header>.arrow
+        .accordion>.view>input.toggle:checked~.header>.arrow
         {
             top: 14px;
         }
@@ -252,7 +261,7 @@ ul>li:hover
 }
 /* couldn't come up with less hacky way, leave like that for now */
 /* animation */
-.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content
+.accordion.animated>.view>input.toggle:not(:checked)~.content
 {
     display: block;
     visibility: hidden;
@@ -260,7 +269,7 @@ ul>li:hover
     margin-bottom: 0px;
     padding: 0px 10px;
 }
-    .accordion.animated>.view>input.toggle:checked+.for_ios>.content
+    .accordion.animated>.view>input.toggle:checked~.content
     {
         display: block;
         visibility: visible;
@@ -269,7 +278,7 @@ ul>li:hover
         padding: 5px 10px;
     }
 /* 100px */
-.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content.animated100
+.accordion.animated>.view>input.toggle:not(:checked)~.content.animated100
 {
     overflow: hidden;
     -webkit-animation-name: disappearing100;
@@ -277,7 +286,7 @@ ul>li:hover
     -moz-animation-name: disappearing100;
     -moz-animation-duration: 1s;
 }
-.accordion.animated>.view>input.toggle:checked+.for_ios>.content.animated100
+.accordion.animated>.view>input.toggle:checked~.content.animated100
 {
     overflow: hidden;
     -webkit-animation-name: appearing100;
@@ -286,7 +295,7 @@ ul>li:hover
     -moz-animation-duration: 1s;
 }
 /* 120px */
-.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content.animated120
+.accordion.animated>.view>input.toggle:not(:checked)~.content.animated120
 {
     overflow: hidden;
     -webkit-animation-name: disappearing120;
@@ -294,7 +303,7 @@ ul>li:hover
     -moz-animation-name: disappearing120;
     -moz-animation-duration: 1s;
 }
-.accordion.animated>.view>input.toggle:checked+.for_ios>.content.animated120
+.accordion.animated>.view>input.toggle:checked~.content.animated120
 {
     overflow: hidden;
     -webkit-animation-name: appearing120;
@@ -303,7 +312,7 @@ ul>li:hover
     -moz-animation-duration: 1s;
 }
 /* 240px */
-.accordion.animated>.view>input.toggle:not(:checked)+.for_ios>.content.animated240
+.accordion.animated>.view>input.toggle:not(:checked)~.content.animated240
 {
     overflow: hidden;
     -webkit-animation-name: disappearing240;
@@ -311,7 +320,7 @@ ul>li:hover
     -moz-animation-name: disappearing240;
     -moz-animation-duration: 1s;
 }
-.accordion.animated>.view>input.toggle:checked+.for_ios>.content.animated240
+.accordion.animated>.view>input.toggle:checked~.content.animated240
 {
     overflow: hidden;
     -webkit-animation-name: appearing240;

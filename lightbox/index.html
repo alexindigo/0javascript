@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=1024">
+ <title>0javascript/lightbox</title>
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Terminal+Dosis+Light">
+ <link rel="stylesheet" type="text/css" href="/s/base.css">
+ <!--[if IE]><link rel="stylesheet" href="/s/ie.css"><![endif]-->
+ <link rel="stylesheet" type="text/css" href="lightbox.css">
+ <!--[if IE]><link rel="stylesheet" href="lightbox_ie.css"><![endif]-->
+</head>
+<body><span id="gallery"></span><input id="do_loop" type="checkbox" name="do_loop" value=""><!--
+Storing big pictures below
+--><span
+    id="picture_1" class="picture">
+  <img src="http://farm7.static.flickr.com/6202/6161306820_a83c9d51cb_z.jpg" alt="Full picture">
+  <a class="prev loop" href="#picture_7"></a>
+  <a class="next" href="#picture_2"></a>
+</span><span
+    id="picture_2" class="picture">
+  <img src="http://farm7.static.flickr.com/6067/6160838604_d19368ee5a_z.jpg" alt="Full picture">
+  <a class="prev" href="#picture_1"></a>
+  <a class="next" href="#picture_3"></a>
+</span><span
+    id="picture_3" class="picture">
+  <img src="http://farm7.static.flickr.com/6061/6160202283_a020730fae_z.jpg" alt="Full picture">
+  <a class="prev" href="#picture_2"></a>
+  <a class="next" href="#picture_4"></a>
+</span><span
+    id="picture_4" class="picture">
+  <img src="http://farm6.static.flickr.com/5141/5868548356_e3fe0996ba_z.jpg" alt="Full picture">
+  <a class="prev" href="#picture_3"></a>
+  <a class="next" href="#picture_5"></a>
+</span><span
+    id="picture_5" class="picture">
+  <img src="http://farm7.static.flickr.com/6163/6178945498_6bf790a040_z.jpg" alt="Full picture">
+  <a class="prev" href="#picture_4"></a>
+  <a class="next" href="#picture_6"></a>
+</span><span
+    id="picture_6" class="picture">
+  <img src="http://farm7.static.flickr.com/6007/5996524264_46728f5913_z.jpg" alt="Full picture">
+  <a class="prev" href="#picture_5"></a>
+  <a class="next" href="#picture_7"></a>
+</span><span
+    id="picture_7" class="picture">
+  <img src="http://farm7.static.flickr.com/6025/5980074987_895db09854_z.jpg" alt="Full picture">
+  <a class="prev" href="#picture_6"></a>
+  <a class="next loop" href="#picture_1"></a>
+</span><!--
+Storing big pictures above
+--><span id="chrome">
+  <label class="loop" for="do_loop">Loop</label>
+  <a class="close" href="#gallery">Close</a>
+</span>
+
+
+
+<!-- Github link -->
+<div id="github"><a href="https://github.com/alexindigo/0javascript">Fork me on GitHub</a></div>
+
+<header>
+<h1><span class="title">0javascript</span><span class="sep">/</span><span class="resource">lightbox</span></h1>
+</header>
+<!-- header ends here -->
+
+<section class="example">
+
+<p>
+ Text added here for the purpose of showing ":target" auto-scrolling behavior solution.
+</p>
+
+<div class="container">
+<!-- gallery content goes below -->
+<span class="thumb">
+ <a href="#picture_1"><img src="http://farm7.static.flickr.com/6202/6161306820_a83c9d51cb_t.jpg" alt="Thumbnail"></a>
+</span>
+<span class="thumb">
+ <a href="#picture_2"><img src="http://farm7.static.flickr.com/6067/6160838604_d19368ee5a_t.jpg" alt="Thumbnail"></a>
+</span>
+<span class="thumb">
+ <a href="#picture_3"><img src="http://farm7.static.flickr.com/6061/6160202283_a020730fae_t.jpg" alt="Thumbnail"></a>
+</span>
+<span class="thumb">
+ <a href="#picture_4"><img src="http://farm6.static.flickr.com/5141/5868548356_e3fe0996ba_t.jpg" alt="Thumbnail"></a>
+</span>
+<span class="thumb">
+ <a href="#picture_5"><img src="http://farm7.static.flickr.com/6163/6178945498_6bf790a040_t.jpg" alt="Thumbnail"></a>
+</span>
+<span class="thumb">
+ <a href="#picture_6"><img src="http://farm7.static.flickr.com/6007/5996524264_46728f5913_t.jpg" alt="Thumbnail"></a>
+</span>
+<span class="thumb">
+ <a href="#picture_7"><img src="http://farm7.static.flickr.com/6025/5980074987_895db09854_t.jpg" alt="Thumbnail"></a>
+</span>
+<!-- gallery content goes above -->
+</div>
+
+<p>
+ Gallery may refer to: an art museum (art gallery), a retail art shop (also often known as an art gallery), an exhibition room in a museum, long gallery, an element in architecture: a long hallway or long, narrow room, frequently decorated with sculptures and frescoes, a narrow balcony, usually including a railing, inside or outside of a building, a minstrels' gallery, a balcony used by performing musicians, an observation deck, usually on the upper floors of a building, used to afford visitors a long-distance view, gallery, in a theatre or concert hall, one or more raised seating platforms towards the rear of the auditorium — see Theater (structure)#Basic elements of a theater structure, in mining, a horizontal passage in an underground mine.
+</p>
+
+<p>
+ Lightbox may refer to a lighted display panel used for advertising purposes by a variety of businesses, especially the retailers. The panel can be illuminated by fluorescent light bulbs or LED lighting strips. The efficiency of Light boxes improved dramatically after the introduction of LED technology. These lighting source can be placed at the back of the panel or even at the side of it. Light box is very simple to use. You just need to insert whatever graphic you'd like to display into the light box itself and the image can be changed anytime you want. Some light boxes are designed especially for outdoor purposes so they are more weather and water proof and usually have a lock on their frontend to secure the images inside. One can see such light boxes easily in any retail shop or in a movie theatre.
+</p>
+
+</section>
+
+<!-- footer begins here -->
+<footer>
+    <p id="copyright">0javascript &copy; 2011 Alex Indigo<br>Released under the <a href="https://raw.github.com/alexindigo/0javascript/master/LICENSE">MIT license</a>.</p>
+    <p id="browsers">
+     Safari, Chrome, Firefox, Internet Explorer 9<br>
+     iPhone*, iPad*
+    </p>
+    <p id="links">
+     <a href="https://github.com/alexindigo/0javascript/zipball/master">Download</a> &middot; <a href="https://github.com/alexindigo/0javascript">Version 0.3</a><br>
+     <a href="https://github.com/alexindigo/0javascript/issues">Report Bug</a> &middot; <a href="mailto:iam@alexindigo.com?subject=0javascript">Send Feedback</a>
+    </p>
+</footer><!--
+extra stuff
+--><div id="loading"></div>
+</body>
+</html>

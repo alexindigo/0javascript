@@ -1,7 +1,12 @@
+0.3
+- Added lightbox example.
+- [accordion] Added CSS-webkit fix for ~ selector bug.
+- [accordion] Cleaned up html.
+
 0.2
-- Refactored to make it work in iOS Safari (tested iPhone4, iPad2)
-- Same refactoring fixed Ubuntu/Chromium/12 issue
+- [accordion] Refactored to make it work in iOS Safari (tested iPhone4, iPad2)
+- [accordion] Same refactoring fixed Ubuntu/Chromium/12 issue
   https://github.com/alexindigo/0javascript/issues/1
 
 0.1
-- Created proof-of-concept
+- Created accordion proof-of-concept

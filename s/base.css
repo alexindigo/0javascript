@@ -28,7 +28,7 @@ footer,header,hgroup,menu,nav,section
 body
 {
     background-color: #eeeeee;
-    background-image: url("bright_squares.png");
+    background-image: url("/i/bright_squares.png");
     background-position: 0px 0px;
     background-repeat: repeat;
     font-family: "Terminal Dosis Light", cursive;
@@ -46,9 +46,9 @@ header>h1>span
 {
     color: #808080;
 
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
     header>h1>span:hover
     {
@@ -74,7 +74,7 @@ footer
     background-color: #444444;
     text-shadow: none;
     z-index: 2;
-    background-image: url("denim.png");
+    background-image: url("/i/denim.png");
     background-position: top left;
     background-repeat: repeat;
     text-shadow: 0px -1px 1px #222222;
@@ -114,6 +114,12 @@ footer p
     color: #ffffff;
     text-align: center;
 }
+/* common */
+p
+{
+    margin: 0.5em 0px;
+    text-align: justify;
+}
 /* elements */
 section.example
 {
@@ -142,7 +148,7 @@ ul>li
     height: 0px;
     margin-left: -24px;
     margin-top: -24px;
-    background-image: url("loading.png");
+    background-image: url("/i/loading.png");
 
     -webkit-animation-name: rotating;
     -webkit-animation-duration: 2s;
@@ -161,6 +167,8 @@ ul>li
     width: 180px;
     height: 180px;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 #github>a
 {
@@ -172,15 +180,15 @@ ul>li
     height: 30px;
     line-height: 30px;
     background-color: #444444;
-    background-image: url("denim.png");
+    background-image: url("/i/denim.png");
     background-position: top left;
     background-repeat: repeat;
     border-top: 1px dashed #eeeeee;
     border-bottom: 1px dashed #eeeeee;
     font-size: 14px;
-    color: #ffffff;
+    color: #e0e0e0;
     text-align: center;
-    text-shadow: 0px 0px 1px #cccccc;
+    text-shadow: none;
     text-decoration: none;
 
     -webkit-box-shadow: 0px 1px 1px #444444, 0px -1px 1px #444444;
@@ -190,6 +198,10 @@ ul>li
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
 }
+    #github>a:hover
+    {
+        color: #ffffff;
+    }
 /* keyframes */
 @-webkit-keyframes rotating
 {
