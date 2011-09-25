@@ -189,15 +189,7 @@ body { -webkit-animation: bugfix infinite 1s; }
 /* extra stuff: loop */
 #do_loop
 {
-    position: fixed;
-    display: block;
-    z-index: 103;
-    top: 11px;
-    left: 15px;
-    width: 36px;
-    height: 24px;
-    cursor: pointer;
-    opacity: 0;
+    display: none;
 }
 #chrome>.loop
 {
@@ -217,12 +209,10 @@ body { -webkit-animation: bugfix infinite 1s; }
     {
         background-position: 0px -24px;
     }
-    #do_loop:hover~#chrome>.loop,
     #chrome>.loop:hover
     {
         background-position: 0px -48px;
     }
-    #do_loop:checked:hover~#chrome>.loop,
     #do_loop:checked~#chrome>.loop:hover
     {
         background-position: 0px -72px;
@@ -235,5 +225,35 @@ body { -webkit-animation: bugfix infinite 1s; }
 {
     display: block;
 }
+/* plus workaround iOS */
+#do_loop
+{
+    position: fixed;
+    display: block;
+    z-index: 103;
+    top: 11px;
+    left: 15px;
+    width: 36px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0;
+}
+#do_loop:hover~#chrome>.loop
+{
+    background-position: 0px -48px;
+}
+#do_loop:checked:hover~#chrome>.loop
+{
+    background-position: 0px -72px;
+}
+.picture~header
+{
+    position: relative;
+    z-index: 104;
+}
+    .picture:target~header
+    {
+        z-index: 99;
+    }
 /* animation */
 
