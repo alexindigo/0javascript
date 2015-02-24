@@ -4,7 +4,7 @@ Collection of CSS-only widgets:
 
 ### Accordion
 
-Demo: [alexindigo.github.com/accordion/](http://alexindigo.github.com/accordion/)
+Demo: [alexindigo.com/accordion/](http://alexindigo.com/accordion/)
 
 CSS only widget with collapsing/expanding sections. Available in three variations:
 
@@ -18,7 +18,7 @@ CSS only widget with collapsing/expanding sections. Available in three variation
 
 ### Lightbox
 
-Demo: [alexindigo.github.com/lightbox/](http://alexindigo.github.com/lightbox/)
+Demo: [alexindigo.com/lightbox/](http://alexindigo.com/lightbox/)
 
 CSS only widget to display images within modal dialog. Includes previous/next image controls, as well as loop toggle and close button. "Back button" friendly.
 
